@@ -1,36 +1,15 @@
-fun printStr (S)
-begin
-  for i := 0, i < strlen (S), i := i+1
-  do
-    write (strget (S, i))
-  od;
-  return 0
+fun f1(x) begin
+    return 1 + (2 + (3 + (4 + (5 + x))))
 end
 
-S := "I will remember April.";
+fun f2(x) begin
+    return 1 + f1(x)
+end
 
-printStr (S);
-write (0);
-printStr (strsub (S, 7, 8));
-write (0);
-printStr ("remember");
-write (0);
-write (strlen(S));
-D := strdup (S);
-write (0);
+fun f3(x) begin
+    return 1 + (2 + (3 + (4 + (5 + f1(x)))))
+end
 
-for i := 0, i < strlen(S), i := i+1 do
-  if strget (S, i) == 'i' then strset (S, i, 'j') fi
-od;
-
-printStr (S);
-write (0);
-printStr (D);
-write (0);
-
-printStr (strcat (S, D));
-write (strcmp (S, D));
-write (strcmp (D, S));
-write (strcmp (S, S))
-
-
+write(f1(6));
+write(f2(6));
+write(f3(6))

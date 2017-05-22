@@ -1,25 +1,10 @@
-fun printArray (A)
-begin
-  for i:=0, i<arrlen (A), i:=i+1
-  do
-    write (A[i])
-  od;
-  return 0
-end
+S := strmake (100, 'a');
 
-fun readArray (A) 
-begin
-  for i:=0, i<arrlen (A), i:=i+1
-  do
-    A[i] := read ()
-  od;
-  return A
-end
+flag := true;
 
-A := arrmake (5, 0); 
-A := readArray (A);
-printArray (A);
+for i := 0, i < strlen (S) && flag, i := i+1 do
+  flag := strget(S, i) == 'a'
+od;
 
-A := [1, 2, 3, 4, 5];
-printArray (A)
-
+write (flag);
+write (strlen (strdup (S)))
