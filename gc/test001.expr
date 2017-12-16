@@ -1,0 +1,8 @@
+fun foo(A) begin
+    i := 1;
+    write(A[i]);
+    return 0
+end
+
+A := [1, 2, 3];
+foo(A)

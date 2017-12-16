@@ -1,0 +1,11 @@
+fun initArray (A) 
+begin
+  for i:=0, i<arrlen (A), i:=i+1
+  do
+    A[i] := i
+  od;
+  return 0
+end
+
+A := arrmake (5, 0);
+initArray(A)
