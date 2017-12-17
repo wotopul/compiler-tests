@@ -5,9 +5,10 @@ TESTS=test001 test002
 check: $(TESTS) 
 
 $(TESTS): %: %.expr
-	RC_RUNTIME=../../runtime ../../rc -o $< && cat $@.input | ./$@ > $@.log && diff $@.log orig/$@.log
-	cat $@.input | ../../rc -i $< > $@.log && diff $@.log orig/$@.log
-	cat $@.input | ../../rc -s $< > $@.log && diff $@.log orig/$@.log
+	RC_RUNTIME=../../runtime ../../rc -om $<
+	cat $@.input | MALLOC_TRACE=./mtrace-$@.log ./$@ > $@.log
+	diff $@.log orig/$@.log
+	mtrace ./$@ ./mtrace-$@.log
 
 clean:
-	rm -f test*.log *.s *~ $(TESTS)
+	rm -f test*.log mtrace*.log *.s *~ $(TESTS)
