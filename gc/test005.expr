@@ -1,0 +1,14 @@
+for i := 0, i < 10, i := i + 1 do
+  S := strmake(100, 'a');
+  if i == 9 then
+    write(strget(S, 42))
+  fi
+od;
+
+for i := 0, i < 10, i := i + 1 do
+  A := arrmake(100, 97);
+  if i == 0 then
+    write(A[42])
+  fi;
+  A := [1, 2, 3]
+od
