@@ -1,0 +1,7 @@
+fun readArray (len)
+begin
+  A := arrmake(len, 0);
+  return A
+end
+
+A := readArray (5)

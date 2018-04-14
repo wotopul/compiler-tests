@@ -1,4 +1,4 @@
-TESTS=test001 test002 test003 test004 test005
+TESTS=test001 test002 test003 test004 test005 core028 core029 core030a core030b core030
 
 .PHONY: check $(TESTS) 
 
@@ -11,4 +11,4 @@ $(TESTS): %: %.expr
 	mtrace ./$@ ./mtrace-$@.log
 
 clean:
-	rm -f test*.log mtrace*.log *.s *~ $(TESTS)
+	rm -f *.log *.s *~ $(TESTS)

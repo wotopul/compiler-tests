@@ -1,0 +1,21 @@
+fun printArray (A)
+begin
+  for i:=0, i<arrlen (A), i:=i+1
+  do
+    write (A[i])
+  od;
+  return 0
+end
+
+fun readArray (len)
+begin
+  A := arrmake(len, 0);
+  for i:=0, i<arrlen (A), i:=i+1
+  do
+    A[i] := read ()
+  od;
+  return A
+end
+
+A := readArray (5);
+printArray(A)
