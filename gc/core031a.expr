@@ -1,0 +1,15 @@
+fun readMatrix ()
+begin
+  rs := read ();
+  cs := read ();
+
+  M := Arrmake (rs, {});
+
+  for i := 0, i < rs, i := i+1 do
+    Mi := arrmake (cs, 0);
+    M[i] := Mi
+  od;
+  return M
+end
+
+A := readMatrix ()

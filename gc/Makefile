@@ -1,4 +1,4 @@
-TESTS=test001 test002 test003 test004 test005 core028 core029 core030a core030b core030
+TESTS=test001 test002 test003 test004 test005 core028 core029 core030a core030b core030 core031a core031
 
 .PHONY: check $(TESTS) 
 
