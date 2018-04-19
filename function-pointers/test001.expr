@@ -1,0 +1,14 @@
+fun first(x) begin
+  write(x * 2);
+  return 0
+end
+
+fun second(x) begin
+  write(x * 3);
+  return 0
+end
+
+fp := first;
+fp(42);
+fp := second;
+fp(42)
