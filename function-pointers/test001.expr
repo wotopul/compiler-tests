@@ -8,7 +8,7 @@ fun second(x) begin
   return 0
 end
 
-fp := first;
+fp := & first;
 fp(42);
-fp := second;
+fp := & second;
 fp(42)
