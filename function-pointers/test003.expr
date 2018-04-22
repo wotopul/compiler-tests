@@ -1,0 +1,22 @@
+fun even(x) begin
+  return x % 2 == 0
+end
+
+fun filter(L, p) begin
+for i := 0, i < arrlen(L), i := i + 1
+do
+  e := L[i];
+  if (p(e)) then write(e) fi
+od;
+return 0
+end
+
+n := 10;
+List := arrmake(n, 0);
+for i := 0, i < n, i := i + 1
+do
+  List[i] := i
+od;
+
+pred := & even;
+filter(List, pred)

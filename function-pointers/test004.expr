@@ -1,0 +1,21 @@
+fun square(x) begin
+  return x * x
+end
+
+fun map(L, f) begin
+for i := 0, i < arrlen(L), i := i + 1
+do
+  write(f(L[i]))
+od;
+return 0
+end
+
+n := 5;
+List := arrmake(n, 0);
+for i := 0, i < n, i := i + 1
+do
+  List[i] := i
+od;
+
+f := & square;
+map(List, f)
