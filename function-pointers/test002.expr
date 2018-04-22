@@ -1,0 +1,35 @@
+fun foo(f) begin
+  f();
+  return 0
+end
+
+fun bar(f, g) begin
+  f(); g();
+  return 0
+end
+
+fun print42() begin
+  write(42);
+  return 0
+end
+
+fun printStr(S)
+begin
+  for i := 0, i < strlen (S), i := i+1
+  do
+    write(strget (S, i))
+  od;
+  return 0
+end
+
+fun printHello() begin
+  S := "Hello";
+  printStr(S);
+  return 0
+end
+
+f := & print42;
+g := & printHello;
+
+foo(g);
+bar(f, g)
